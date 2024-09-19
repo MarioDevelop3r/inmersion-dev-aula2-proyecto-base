@@ -1,19 +1,53 @@
+/* Estilos base */
 body {
     font-family: Arial, sans-serif;
-
     background: url('../img/codigo.svg'), linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%);
-
-
     background-size: auto;
     background-repeat: no-repeat;
-    /* Hace que la imagen cubra todo el área del elemento */
-    background-position: right;
+    background-position: center;
     min-height: 100vh;
     margin: 0;
     padding: 0;
     color: white;
 }
 
+/* Clases reutilizables */
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.padding-10 {
+    padding: 10px;
+}
+
+.margin-20 {
+    margin: 20px;
+}
+
+.border-radius-4 {
+    border-radius: 4px;
+}
+
+.border-radius-24 {
+    border-radius: 24px;
+}
+
+.box-shadow {
+    box-shadow: 4px 4px 20px 0px #01080E26;
+}
+
+.transition {
+    transition: all 0.3s;
+}
+
+/* Inputs */
 input[type="text"],
 input[type="number"] {
     font-size: 1rem;
@@ -21,8 +55,16 @@ input[type="number"] {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
+input[type="text"]:hover,
+input[type="number"]:hover {
+    border-color: #1875E8;
+    box-shadow: 0 0 5px rgba(24, 117, 232, 0.5);
+}
+
+/* Botones */
 button {
     padding: 10px 40px;
     width: fit-content;
@@ -32,13 +74,15 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 button:hover {
     background-color: #4cae4c;
+    transform: scale(1.05);
 }
 
+/* Lista de gastos */
 ul {
     list-style-type: none;
     padding: 0;
@@ -54,28 +98,33 @@ ul li {
     border-bottom: 1px solid #eee;
     display: flex;
     justify-content: space-between;
+    transition: background-color 0.3s;
+}
+
+ul li:hover {
+    background-color: #062a4f;
 }
 
 ul li:last-child {
     border-bottom: none;
 }
 
+/* Contenedores */
 .main-container {
     display: flex;
     justify-content: center;
     top: 110px;
     left: 120px;
-    width: 1200px;
+    width: 100%;
     min-height: 80vh;
-    margin: 0px auto;
     padding: 20px;
+    margin: auto;
     background: linear-gradient(0deg, rgba(20, 68, 128, 0.3), rgba(20, 68, 128, 0.3)),
         linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
-
     border-radius: 24px;
     color: white;
     box-shadow: 4px 4px 20px 0px #01080E26;
-    border: 1px solid #1875E8
+    border: 1px solid #1875E8;
 }
 
 .container {
@@ -110,5 +159,103 @@ ul li:last-child {
     font-size: 24px;
     text-align: center;
     color: #fff;
+    background-color: #041832;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
+/* Alertas */
+.alert {
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+    color: white;
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.alert-success {
+    background-color: #4cae4c;
+    border-left: 5px solid #3a9d3a;
+}
+
+.alert-error {
+    background-color: #e74c3c;
+    border-left: 5px solid #c0392b;
+}
+
+.alert-icon {
+    margin-right: 15px;
+    font-size: 1.5rem;
+}
+
+.alert-message {
+    flex: 1;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 0.9;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 0.9;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+.alert.show {
+    animation: fadeIn 0.3s forwards;
+}
+
+.alert.hide {
+    animation: fadeOut 0.3s forwards;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    .main-container {
+        align-content: center;
+        width: 90%;
+        top: 0;
+        left: 0;
+    }
+
+    .container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .form-group {
+        width: 90%;
+    }
+
+    .img-container img {
+        width: 100%;
+    }
+}
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+    }
+
+    .form-group {
+        width: 80%;
+    }
 }
