@@ -1,7 +1,6 @@
 /* Estilos base */
 body {
     font-family: Arial, sans-serif;
-    font-size: 1.5rem;
     background: url('../img/codigo.svg'), linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%);
     background-size: contain;
     background-repeat: no-repeat;
@@ -66,7 +65,6 @@ input[type="number"]:hover {
 
 /* Botones */
 button {
-    padding: 10px 40px;
     width: fit-content;
     background-color: #1875E8;
     color: #fff;
@@ -95,12 +93,22 @@ ul {
 
 ul li {
     padding: 10px;
+    font-weight: 300;
     background-color: #041832;
     border-bottom: 1px solid #eee;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
     transition: background-color 0.3s;
 }
+
+li {
+    font-size: 1rem;
+    margin-left: 10px;
+    gap: 10px;
+}
+
 
 ul li:hover {
     background-color: #062a4f;
@@ -110,31 +118,11 @@ ul li:last-child {
     border-bottom: none;
 }
 
-.li {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: #041832;
-    border-bottom: 1px solid #eee;
-    transition: background-color 0.3s;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 500;
-    font-family: Arial, sans-serif;
-    text-transform: capitalize;
-    align-items: center;
-    gap: 10px;
-    border-radius: 4px;
-    margin: 10px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s;
-}
 
 /* Contenedores */
 .main-container {
     display: flex;
     justify-content: center;
-    padding-top: 100px;
     width: auto;
     min-height: 80vh;
     background: linear-gradient(0deg, rgba(20, 68, 128, 0.3), rgba(20, 68, 128, 0.3)),
@@ -260,7 +248,6 @@ ul li:last-child {
 @media (max-width: 768px) {
     .main-container {
         width: 100%;
-        border-radius: 0;
         padding-top: 20px;
     }
 
@@ -277,14 +264,14 @@ ul li:last-child {
         width: 100%;
     }
 
-    .li {
-        flex-direction: column;
-    }
-
     button {
         font-size: 1rem;
         padding: 8px 20px;
         width: 100%;
+    }
+
+    li {
+        font-size: 0.9rem;
     }
 }
 
@@ -297,16 +284,9 @@ ul li:last-child {
         font-size: 0.9rem;
         padding: 6px 15px;
         width: 90%;
+        font-size: medium;
     }
 }
 
-li {
-    font-size: 1rem;
-    text-align: center;
-    align-items: center;
-}
 
-button {
-    font-size: 1rem;
-    margin-left: 5px;
-}
+
