@@ -65,6 +65,7 @@ input[type="number"]:hover {
 
 /* Botones */
 button {
+    padding: 10px 25px;
     width: fit-content;
     background-color: #1875E8;
     color: #fff;
@@ -104,7 +105,7 @@ ul li {
 }
 
 li {
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-left: 10px;
     gap: 10px;
 }
@@ -116,6 +117,10 @@ ul li:hover {
 
 ul li:last-child {
     border-bottom: none;
+}
+
+.total:hover {
+    background-color: #041832;
 }
 
 
@@ -168,6 +173,9 @@ ul li:last-child {
     background-color: #041832;
     border-radius: 10px;
     padding: 10px;
+}
+.total:hover {
+    background-color: #1875E8;;
 }
 
 /* Alertas */
@@ -268,10 +276,6 @@ ul li:last-child {
         font-size: 1rem;
         padding: 8px 20px;
         width: 100%;
-    }
-
-    li {
-        font-size: 0.9rem;
     }
 }
 
